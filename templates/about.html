@@ -1,0 +1,176 @@
+{% extends "base.html" %} {% block content %}
+<div
+  class="about"
+  style="
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 30px; */
+  "
+>
+  <div
+    style="
+      text-align: center;
+      padding: 40px 40px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      max-width: 800px;
+    "
+  >
+    <!-- Project Overview -->
+    <div style="background-color: #45a049; padding: 30px">
+      <h2 style="font-size: 28px; color: white; margin: 0">About Project</h2>
+      <p
+        style="
+          color: #f0f0f0;
+          line-height: 1.6;
+          font-size: 16px;
+          margin-top: 15px;
+          padding: 0 20px;
+        "
+      >
+        The Sugar Cane Yield Prediction project aims to harness data-driven
+        insights to forecast sugar cane production yields accurately. Given the
+        significance of sugar cane as a primary agricultural commodity in
+        industries like sugar production, biofuels, and other energy sources,
+        predicting yield can be essential for optimizing agricultural practices,
+        resource management, and overall industry sustainability.
+      </p>
+    </div>
+
+    <div style="background-color: white; padding-block: 30px">
+      <h3 style="font-size: 22px; color: #555; margin-top: 10px">
+        Team Members
+      </h3>
+
+      <div
+        class="team"
+        style="
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          flex-wrap: wrap;
+          margin-top: 20px;
+        "
+      >
+        <!-- Tooba Mehboob -->
+        <div style="display: flex; flex-direction: column; align-items: center">
+          <div
+            style="
+              width: 100px;
+              height: 100px;
+              border: 2px solid #45a049;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: #f0f0f0;
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 50px; height: 50px; fill: #45a049"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 12c2.7 0 4.5-1.8 4.5-4.5S14.7 3 12 3 7.5 4.8 7.5 7.5 9.3 12 12 12zm0 1.5c-2.3 0-6.5 1.2-6.5 3.5V21h13v-4c0-2.3-4.2-3.5-6.5-3.5z"
+              />
+            </svg>
+          </div>
+          <p style="font-size: 16px; color: #333; margin-top: 10px">
+            Tooba Mehboob
+          </p>
+        </div>
+
+        <!-- Cassandra Chang -->
+        <div style="display: flex; flex-direction: column; align-items: center">
+          <div
+            style="
+              width: 100px;
+              height: 100px;
+              border: 2px solid #45a049;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: #f0f0f0;
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 50px; height: 50px; fill: #45a049"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 12c2.7 0 4.5-1.8 4.5-4.5S14.7 3 12 3 7.5 4.8 7.5 7.5 9.3 12 12 12zm0 1.5c-2.3 0-6.5 1.2-6.5 3.5V21h13v-4c0-2.3-4.2-3.5-6.5-3.5z"
+              />
+            </svg>
+          </div>
+          <p style="font-size: 16px; color: #333; margin-top: 10px">
+            Cassandra Chang
+          </p>
+        </div>
+
+        <!-- Aymen Zubair -->
+        <div style="display: flex; flex-direction: column; align-items: center">
+          <div
+            style="
+              width: 100px;
+              height: 100px;
+              border: 2px solid #45a049;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: #f0f0f0;
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 50px; height: 50px; fill: #45a049"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 12c2.7 0 4.5-1.8 4.5-4.5S14.7 3 12 3 7.5 4.8 7.5 7.5 9.3 12 12 12zm0 1.5c-2.3 0-6.5 1.2-6.5 3.5V21h13v-4c0-2.3-4.2-3.5-6.5-3.5z"
+              />
+            </svg>
+          </div>
+          <p style="font-size: 16px; color: #333; margin-top: 10px">
+            Aymen Zubair
+          </p>
+        </div>
+
+        <!-- Rida Fatma -->
+        <div style="display: flex; flex-direction: column; align-items: center">
+          <div
+            style="
+              width: 100px;
+              height: 100px;
+              border: 2px solid #45a049;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: #f0f0f0;
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 50px; height: 50px; fill: #45a049"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 12c2.7 0 4.5-1.8 4.5-4.5S14.7 3 12 3 7.5 4.8 7.5 7.5 9.3 12 12 12zm0 1.5c-2.3 0-6.5 1.2-6.5 3.5V21h13v-4c0-2.3-4.2-3.5-6.5-3.5z"
+              />
+            </svg>
+          </div>
+          <p style="font-size: 16px; color: #333; margin-top: 10px">
+            Rida Fatma
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

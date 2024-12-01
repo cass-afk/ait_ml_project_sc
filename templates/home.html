@@ -1,0 +1,156 @@
+{% extends "base.html" %} {% block content %}
+<div>
+  <div style="display: flex; flex-direction: column; gap: 16px">
+    <!-- _________________________________HERO IIMAGE________________________________________ -->
+    <div class="heroImage">
+      <div
+        style="
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          width: 100vw;
+          height: 100%;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            /* justify-content: flex-end; */
+            justify-content: center;
+            align-items: center;
+            width: 50vw;
+            height: 100%;
+            background: url(../static/images/contact1.jpg);
+          "
+        >
+          <h2
+            style="
+              padding: 20px;
+              font-size: 1.4em;
+              line-height: 1.6;
+              max-width: 100%;
+              /* text-align: center; */
+              margin: 0;
+              transition: transform 0.3s ease;
+              color: white;
+              background-color: rgba(0, 0, 0, 0.4);
+            "
+          >
+            Accurate sugarcane yield predictions are crucial for economic
+            stability, especially in regions where sugarcane is a primary
+            agricultural product that supports millions of livelihoods and feeds
+            industries like food, biofuels, and energy.
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- ______________________________________ ARTICLES_______________________________ -->
+    <h2 style="text-align: center; color: black">Why Need a Predictor?</h2>
+
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+      "
+    >
+      <div class="article">
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <!-- Content for the front side -->
+              <img
+                src="../static/images/tractor.jpg"
+                alt="Front Image"
+                class="card-image"
+              />
+            </div>
+            <div class="card-back">
+              <!-- Content for the back side -->
+              <p style="text-align: center">
+                Decreasing yield of Sugarcane in Thailand
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="article">
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <!-- Content for the front side -->
+              <img
+                src="../static/images/variations.jpg"
+                alt="Front Image"
+                class="card-image"
+              />
+            </div>
+            <div class="card-back">
+              <!-- Content for the back side -->
+              <p style="text-align: center">
+                Predict yield based on necessary factors
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="article">
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <!-- Content for the front side -->
+              <img
+                src="../static/images/predict.jpg"
+                alt="Front Image"
+                class="card-image"
+              />
+            </div>
+            <div class="card-back">
+              <!-- Content for the back side -->
+              <p style="text-align: center">Help businesses plan for crops</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="homepageSecondBgImage">
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          justify-content: center;
+          align-items: center;
+          margin: 0 auto;
+          margin-top: 14px;
+          width: 60%;
+          height: 40vh;
+          padding-bottom: 30px;
+        "
+      >
+        <h2 style="color: black">How our predictor will help you</h2>
+
+        <p style="text-align: center">
+          Our predictor will hellp you to predict the sugar cane yield for the
+          next year. It will assist you to look on the gap between the yield of
+          previous years and upcoming year. Through this you will be able to
+          take required decision and get your required yield
+        </p>
+
+        <a
+          class="my_btn"
+          href="/predictor"
+          style="text-decoration: none; color: white"
+        >
+          Let's Start</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

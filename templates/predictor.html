@@ -1,0 +1,363 @@
+{% extends "base.html" %} {% block content %}
+<div
+  style="
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 8px;
+    /* height: 100%; */
+  "
+>
+  <div
+    style="
+      width: 100%;
+      max-width: 400px;
+      background: url('../static/images/vector3.jpg') no-repeat center center;
+      background-size: cover;
+      padding: 20px;
+      box-sizing: border-box;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    "
+  ></div>
+  <div
+    class="predictor"
+    style="
+      width: 100%;
+      width: 800px;
+      height: 80vh;
+      padding: 20px;
+      box-sizing: border-box;
+      margin: auto;
+    "
+  >
+    <h2
+      style="font-size: 24px; text-align: center; color: #45a049; margin-top: 0"
+    >
+      Predictor
+    </h2>
+    <div class="predictor_form" style="margin-top: 20px">
+      <form method="POST" action="{{ url_for('result') }}">
+        <div style="margin-bottom: 15px">
+          <label
+            for="wind_speed"
+            style="
+              display: block;
+              font-weight: bold;
+              margin-bottom: 5px;
+              color: #333;
+            "
+            >Wind Speed</label
+          >
+          <input
+            type="number"
+            id="wind_speed"
+            name="wind_speed"
+            step="any"
+            required
+            style="
+              border: none;
+              border-bottom: 2px solid #333;
+              padding: 8px;
+              width: 100%;
+              outline: none;
+            "
+          />
+        </div>
+
+        <div style="margin-bottom: 15px">
+          <label
+            for="temp"
+            style="
+              display: block;
+              font-weight: bold;
+              margin-bottom: 5px;
+              color: #333;
+            "
+            >Temperature</label
+          >
+          <input
+            type="number"
+            id="temp"
+            name="temp"
+            step="any"
+            required
+            style="
+              border: none;
+              border-bottom: 2px solid #333;
+              padding: 8px;
+              width: 100%;
+              outline: none;
+            "
+          />
+        </div>
+
+        <div style="margin-bottom: 15px">
+          <label
+            for="hum"
+            style="
+              display: block;
+              font-weight: bold;
+              margin-bottom: 5px;
+              color: #333;
+            "
+            >Humidity</label
+          >
+          <input
+            type="number"
+            id="hum"
+            name="hum"
+            step="any"
+            required
+            style="
+              border: none;
+              border-bottom: 2px solid #333;
+              padding: 8px;
+              width: 100%;
+              outline: none;
+            "
+          />
+        </div>
+        <div style="margin-bottom: 15px">
+          <label
+            for="heat_idx"
+            style="
+              display: block;
+              font-weight: bold;
+              margin-bottom: 5px;
+              color: #333;
+            "
+            >Heat Index</label
+          >
+          <input
+            type="number"
+            id="heat_idx"
+            name="heat_idx"
+            step="any"
+            required
+            style="
+              border: none;
+              border-bottom: 2px solid #333;
+              padding: 8px;
+              width: 100%;
+              outline: none;
+            "
+          />
+        </div>
+        <div style="margin-bottom: 15px">
+          <label
+            for="pres"
+            style="
+              display: block;
+              font-weight: bold;
+              margin-bottom: 5px;
+              color: #333;
+            "
+            >Pressure</label
+          >
+          <input
+            type="number"
+            id="pres"
+            name="pres"
+            step="any"
+            required
+            style="
+              border: none;
+              border-bottom: 2px solid #333;
+              padding: 8px;
+              width: 100%;
+              outline: none;
+            "
+          />
+        </div>
+        <div style="margin-bottom: 15px">
+          <label
+            for="prec"
+            style="
+              display: block;
+              font-weight: bold;
+              margin-bottom: 5px;
+              color: #333;
+            "
+            >Precipitation</label
+          >
+          <input
+            type="number"
+            id="prec"
+            name="prec"
+            step="any"
+            required
+            style="
+              border: none;
+              border-bottom: 2px solid #333;
+              padding: 8px;
+              width: 100%;
+              outline: none;
+            "
+          />
+        </div>
+
+        <!-- For extra fields -->
+
+        <div style="margin-bottom: 15px">
+          <label
+            for="co2_em_change"
+            style="
+              display: block;
+              font-weight: bold;
+              margin-bottom: 5px;
+              color: #333;
+            "
+            >CO2 Emission</label
+          >
+          <input
+            type="number"
+            id="co2_em_change"
+            name="co2_em_change"
+            step="any"
+            required
+            style="
+              border: none;
+              border-bottom: 2px solid #333;
+              padding: 8px;
+              width: 100%;
+              outline: none;
+            "
+          />
+        </div>
+
+        <div style="margin-bottom: 15px">
+          <label
+            for="co2_em_per_capita"
+            style="
+              display: block;
+              font-weight: bold;
+              margin-bottom: 5px;
+              color: #333;
+            "
+            >CO2 Emission per Capita</label
+          >
+          <input
+            type="number"
+            id="co2_em_per_capita"
+            name="co2_em_per_capita"
+            step="any"
+            required
+            style="
+              border: none;
+              border-bottom: 2px solid #333;
+              padding: 8px;
+              width: 100%;
+              outline: none;
+            "
+          />
+        </div>
+
+        <div style="margin-bottom: 15px">
+          <label
+            for="fossil_co2_em"
+            style="
+              display: block;
+              font-weight: bold;
+              margin-bottom: 5px;
+              color: #333;
+            "
+            >Fossil CO2 Emission</label
+          >
+          <input
+            type="number"
+            id="fossil_co2_em"
+            name="fossil_co2_em"
+            step="any"
+            required
+            style="
+              border: none;
+              border-bottom: 2px solid #333;
+              padding: 8px;
+              width: 100%;
+              outline: none;
+            "
+          />
+        </div>
+
+        <div style="margin-bottom: 15px">
+          <label
+            for="population"
+            style="
+              display: block;
+              font-weight: bold;
+              margin-bottom: 5px;
+              color: #333;
+            "
+            >Population</label
+          >
+          <input
+            type="number"
+            id="population"
+            name="population"
+            step="any"
+            required
+            style="
+              border: none;
+              border-bottom: 2px solid #333;
+              padding: 8px;
+              width: 100%;
+              outline: none;
+            "
+          />
+        </div>
+
+        <div style="margin-bottom: 15px">
+          <label
+            for="pop_change"
+            style="
+              display: block;
+              font-weight: bold;
+              margin-bottom: 5px;
+              color: #333;
+            "
+            >Population Change</label
+          >
+          <input
+            type="number"
+            id="pop_change"
+            name="pop_change"
+            step="any"
+            required
+            style="
+              border: none;
+              border-bottom: 2px solid #333;
+              padding: 8px;
+              width: 100%;
+              outline: none;
+            "
+          />
+        </div>
+
+
+
+        <div>
+          <button
+            class="my_btn"
+            type="submit"
+            style="
+              display: block;
+              width: 100%;
+              background-color: #45a049;
+              color: #ffffff;
+              font-size: 16px;
+              padding: 10px;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              transition: background-color 0.3s ease;
+            "
+          >
+            Predict
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

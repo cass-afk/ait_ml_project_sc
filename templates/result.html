@@ -1,0 +1,67 @@
+{% extends "base.html" %} {% block content %}
+<div
+  style="
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 8px;
+    width: 70vw;
+    height: 60vh;
+  "
+>
+  <div
+    class="result"
+    style="
+      width: 100%;
+      max-width: 800px;
+      padding: 20px;
+      box-sizing: border-box;
+      margin: auto;
+    "
+  >
+    <h2
+      style="font-size: 24px; text-align: center; color: #45a049; margin-top: 0"
+    >
+      Prediction Results
+    </h2>
+
+    <div
+      style="margin-top: 20px; text-align: center; color: #333; font-size: 18px"
+    >
+      <p style="margin: 20px 0; font-weight: bold">
+        Next Year Crop Yield:
+        <span style="color: #45a049">{{ predicted_yield }}</span>
+      </p>
+
+      <a
+        href="{{ url_for('home') }}"
+        style="
+          display: inline-block;
+          background-color: #45a049;
+          color: #ffffff;
+          padding: 10px 20px;
+          border-radius: 4px;
+          text-decoration: none;
+          font-size: 16px;
+          transition: background-color 0.3s ease;
+        "
+        onmouseover="this.style.backgroundColor='#3d8e43'"
+        onmouseout="this.style.backgroundColor='#45a049'"
+      >
+        Back to Home
+      </a>
+    </div>
+  </div>
+  <div
+    style="
+      width: 100%;
+      max-width: 400px;
+      background: url('../static/images/result1.png') no-repeat center center;
+      background-size: cover;
+      padding: 20px;
+      box-sizing: border-box;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    "
+  ></div>
+</div>
+{% endblock %}

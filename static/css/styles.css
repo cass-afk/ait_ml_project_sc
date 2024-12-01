@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Montserrat", sans-serif, Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
+  margin: 0;
+  padding: 0;
+  /* background-image: url('../images/background.png'); */
+  background-size: cover;
+}
+
+header {
+  background-color: #a0d683;
+  padding: 0em;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* This pushes the nav to the right */
+  height: 66px;
+  /* max-width: 1480px; */
+  /* margin: 0 auto; */
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.heading img {
+  height: 40px; /* Adjust logo size as needed */
+}
+
+.navbar nav {
+  display: flex;
+  gap: 20px; /* Space between navigation links */
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #45a049;
+}
+
+/* Default styling for the main content area */
+main {
+  /* padding: 20px; */
+  background-color: rgba(0, 255, 255, 0.8);
+  /* margin: 20px auto; */
+  /* width: 80%; */
+  border-radius: 8px;
+}
+
+/* Homepage-specific main styling */
+.main-homepage {
+  background-color: #faf9f6;
+  /* border: 2px solid #4caf50; */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+  /* padding: 30px; */
+}
+
+/* Predictor page-specific main styling */
+.main-predictor {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Result page-specific main styling */
+.main-result {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* About page-specific main styling */
+.main-about {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* border: 2px solid #673ab7; */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  /* padding: 30px; */
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contact page-specific main styling */
+.main-contact {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #ffff;
+}
+
+h2,
+h3 {
+  color: #4caf50;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+footer {
+  text-align: center;
+  padding: 0em;
+  background-color: #a0d683;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background for the Homepage */
+.heroImage {
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  /* padding: 20px; */
+  height: 50vh;
+}
+/* Background for the Homepage */
+.homepageSecondBgImage {
+  background-image: url("../images/sugarCane.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Background for Other Pages */
+.common-background {
+  background-image: url("../images/sugar_cane.jpeg"); /* Common image for other pages */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* .predictor_form {
+  display: flex;
+} */
+
+/* Card Container */
+.card {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px; /* Enables 3D effect */
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+/* Front and Back Faces */
+.card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  color: white;
+  font-size: 1em;
+}
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  color: white;
+  font-size: 1em;
+  padding: 20px;
+}
+
+.card-front {
+  background: #45a049; /* Front Side Background */
+  overflow: hidden;
+}
+
+/* Make the image cover the entire card front */
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container */
+}
+
+.card-back {
+  background: #45a049; /* Back Side Background */
+  transform: rotateY(180deg); /* Start the back side flipped */
+}
+
+/* Flip Animation on Hover */
+.card:hover .card-inner {
+  transform: rotateY(180deg); /* Rotate the inner container */
+  cursor: pointer;
+}
+
+.my_btn {
+  background-color: #45a049;
+  padding-inline: 30px;
+  padding-block: 15px;
+  font-size: larger;
+  font-family: "Montserrat";
+  border-radius: 8px;
+}
+
+.my_btn:hover {
+  background-color: #a0d683;
+}
