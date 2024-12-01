@@ -17,7 +17,7 @@ class TestApp(unittest.TestCase):
         # Test if the home page loads successfully
         response = self.app.get('/')
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Sugarcane Yield Predictor', response.data)  # Check if the content is as expected
+        self.assertIn(b'Sugar Cane Yield Prediction', response.data)  # Check if the content is as expected
 
     def test_prediction(self):
         # Test the prediction route with valid mock data
@@ -56,19 +56,18 @@ class TestApp(unittest.TestCase):
         scaled_data = self.scaler.transform(input_data)
 
         # Convert scaled data back to strings for form submission
-        scaled_mock_data = {
-            'wind_speed': str(scaled_data[0][0]),
-            'temp': str(scaled_data[0][1]),
-            'hum': str(scaled_data[0][2]),
-            'heat_idx': str(scaled_data[0][3]),
-            'pres': str(scaled_data[0][4]),
-            'prec': str(scaled_data[0][5]),
-            'co2_em_change': str(scaled_data[0][6]),
-            'co2_em_per_capita': str(scaled_data[0][7]),
-            'fossil_co2_em': str(scaled_data[0][8]),
-            'population': str(scaled_data[0][9]),
-            'pop_change': str(scaled_data[0][10])
-        }
+        scaled_mock_data = [float(scaled_data[0][0]),
+                            float(scaled_data[0][1]),
+                            float(scaled_data[0][2]),
+                            float(scaled_data[0][3]),
+                            float(scaled_data[0][4]),
+            float(scaled_data[0][5]),
+             float(scaled_data[0][6]),
+            float(scaled_data[0][7]),
+            float(scaled_data[0][8]),
+            int(scaled_data[0][9]),
+             float(scaled_data[0][10])
+        ]
 
         # Send the scaled data to the /result endpoint
         response = self.app.post('/result', data=scaled_mock_data)
