@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 # Load the model
 model = joblib.load(open('final_best_model_sugarcane_yield.pkl', 'rb'))
+scaler = joblib.load('scaler.pkl')
 
 @app.route('/')
 def home():
@@ -32,9 +33,8 @@ def result():
 
 
     # Create a DataFrame for prediction
-    input_data = pd.DataFrame([[wind_speed, temp, hum, heat_idx, pres, prec, co2_em_change, co2_em_per_capita, fossil_co2_em, population, pop_change ]], 
-                              columns=['wind_speed', 'temp', 'hum', 'heat_idx', 'pres', 'prec','co2_em_change', 'co2_em_per_capita', 'fossil_co2_em', 'population', 'pop_change'])
-
+    input_data = pd.DataFrame([[wind_speed, temp, hum, heat_idx, pres, prec, fossil_co2_em, co2_em_change, co2_em_per_capita, population, pop_change ]], 
+                              columns=['wind_speed', 'temp', 'hum', 'heat_idx', 'pres', 'prec','fossil_co2_em','co2_em_change', 'co2_em_per_capita',  'population', 'pop_change'])
     # Predict yield using the model
     predicted_yield = model.predict(input_data)[0]
 
