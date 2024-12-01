@@ -18,7 +18,8 @@ class TestApp(unittest.TestCase):
     # Test if the home page loads successfully
         response = self.app.get('/')
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Sugarcane Yield Predictor', response.data)  # Updated to match the title
+        self.assertIn(b'Sugar Cane Yield Prediction', response.data)
+  # Updated to match the title
   # Check if the content is as expected
 
 
