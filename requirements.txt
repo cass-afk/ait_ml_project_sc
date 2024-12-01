@@ -3,4 +3,4 @@ numpy
 pandas
 Werkzeug
 joblib
-scikit-learn
+scikit-learn==1.5.1

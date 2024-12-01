@@ -36,7 +36,8 @@ def result():
     input_data = pd.DataFrame([[wind_speed, temp, hum, heat_idx, pres, prec, fossil_co2_em, co2_em_change, co2_em_per_capita, population, pop_change ]], 
                               columns=['wind_speed', 'temp', 'hum', 'heat_idx', 'pres', 'prec','fossil_co2_em','co2_em_change', 'co2_em_per_capita',  'population', 'pop_change'])
     # Predict yield using the model
-    predicted_yield = model.predict(input_data)[0]
+    scaled_data = scaler.transform(input_data)
+    predicted_yield = model.predict(scaled_data)[0]
 
     # Pass the prediction to the template
     return render_template('result.html', predicted_yield=predicted_yield)
