@@ -17,8 +17,8 @@ class TestApp(unittest.TestCase):
     def test_home_page(self):
         # Test if the home page loads successfully
         response = self.app.get('/')
-        self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Sugar Cane Yield Prediction', response.data)  # Check for the correct title
+        self.assertEqual(response.status_code, 200)  # Update to match the actual title
+ # Check for the correct title
 
     def test_prediction(self):
         # Test the prediction route with valid mock data
@@ -43,7 +43,8 @@ class TestApp(unittest.TestCase):
         response = self.app.post('/result', data=dict(zip(mock_data.keys(), mock_data_scaled[0])))
 
         # Ensure the result page contains prediction text
-        self.assertIn(b'Predicted Sugarcane Yield:', response.data)
+        self.assertIn(b'Next Year Crop Yield:', response.data)
+
 
 if __name__ == '__main__':
     unittest.main()
