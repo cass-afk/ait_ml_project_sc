@@ -41,8 +41,19 @@ jobs:
         run: |
           docker run --rm casschang02/flask-sugarcane-app:latest pytest # Adjust test command accordingly
 
-    #   # Optionally, if you need to push the image after testing
-    #   - name: Push Docker image to DockerHub
-    #     run: |
-    #       docker tag casschang02/flask-sugarcane-app:latest casschang02/flask-sugarcane-app:latest &&
-    #       docker push casschang02/flask-sugarcane-app:latest
+      - name: Deploy to AWS EC2
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.EC2_PUBLIC_IP }}
+          username: ${{ secrets.AWS_EC2_USER }}
+          key: ${{ secrets.AWS_KEY }}
+          port: 22
+          script: |
+            # Pull the latest image
+            docker pull casschang02/flask-sugarcane-app:latest
+
+            # Stop and remove any existing container
+            docker rm -f flask-app || true
+
+            # Run the new container
+            docker run -d --name flask-app -p 8080:8080 casschang02/flask-sugarcane-app:latest
