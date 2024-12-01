@@ -36,6 +36,7 @@ class TestApp(unittest.TestCase):
             'population': 1000000,
             'pop_change': 2.1
         }
+        scaler = joblib.load('scaler.pkl')
         mock_data = scaler.transform(pd.DataFrame([mock_data]))
         response = self.app.post('/result', data=mock_data)
         self.assertEqual(response.status_code, 200)
