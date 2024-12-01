@@ -38,8 +38,8 @@ class TestApp(unittest.TestCase):
         }
         scaler = joblib.load('scaler.pkl')
         mock_data = scaler.transform(pd.DataFrame([mock_data]))
-        response = self.app.post('/result', data=mock_data)
-        self.assertEqual(response.status_code, 200)
+        response = self.app.post('/result', data=mock_data)[0]
+        self.assertEqual(response.status_code, 72.0336192)
         self.assertIn(b'Predicted Sugarcane Yield:', response.data)  # Ensure the result page contains prediction text
 
 if __name__ == '__main__':
