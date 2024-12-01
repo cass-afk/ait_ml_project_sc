@@ -30,9 +30,9 @@ class TestApp(unittest.TestCase):
             'heat_idx': 32.0,
             'pres': 1013.0,
             'prec': 50.0,
+            'fossil_co2_em': 800.0,
             'co2_em_change': 1.2,
             'co2_em_per_capita': 4.5,
-            'fossil_co2_em': 800.0,
             'population': 1000000,
             'pop_change': 2.1
         }
