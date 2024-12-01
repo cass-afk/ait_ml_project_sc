@@ -35,14 +35,14 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Pull Docker image
-        run: docker pull flask-sugarcane-app:latest
+        run: docker pull casschang02/flask-sugarcane-app:latest  # Correct image name and tag
 
       - name: Run tests inside Docker container
         run: |
-          docker run --rm flask-sugarcane-app:latest pytest  # Adjust the test command accordingly
+          docker run --rm casschang02/flask-sugarcane-app:latest pytest  # Adjust test command accordingly
 
-      # If you still want to push the image after tests (optional)
-      - name: Push Docker image to DockerHub (optional)
-        run: |
-          docker tag flask-sugarcane-app:latest ${{ secrets.DOCKER_USERNAME }}/flask-sugarcane-app:latest &&
-          docker push ${{ secrets.DOCKER_USERNAME }}/flask-sugarcane-app:latest
+    #   # Optionally, if you need to push the image after testing
+    #   - name: Push Docker image to DockerHub
+    #     run: |
+    #       docker tag casschang02/flask-sugarcane-app:latest casschang02/flask-sugarcane-app:latest &&
+    #       docker push casschang02/flask-sugarcane-app:latest
