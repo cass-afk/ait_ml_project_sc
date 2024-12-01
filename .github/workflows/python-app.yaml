@@ -39,7 +39,7 @@ jobs:
 
       - name: Run tests inside Docker container
         run: |
-          docker run --rm casschang02/flask-sugarcane-app:latest pytest  # Adjust test command accordingly
+          docker run --rm casschang02/flask-sugarcane-app:latest python unitest.py  # Adjust test command accordingly
 
     #   # Optionally, if you need to push the image after testing
     #   - name: Push Docker image to DockerHub
