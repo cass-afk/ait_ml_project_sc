@@ -49,9 +49,6 @@ jobs:
           key: ${{ secrets.AWS_KEY }}
           port: 22
           script: |
-                    # Pull the latest image
                     docker pull casschang02/flask-sugarcane-app:latest
-                    # Stop and remove any existing container
                     docker rm -f flask-app || true
-                    # Run the new container
                     docker run -d --name flask-app -p 8080:8080 casschang02/flask-sugarcane-app:latest
