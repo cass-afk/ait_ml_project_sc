@@ -15,11 +15,10 @@ class TestApp(unittest.TestCase):
         self.scaler = joblib.load('scaler.pkl')  # Replace with your actual scaler path
 
     def test_home_page(self):
-    # Test if the home page loads successfully
+        # Test if the home page loads successfully
         response = self.app.get('/')
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Sugar Cane Yield Prediction', response.data)  # Updated to match the title
-  # Check if the content is as expected
+        self.assertIn(b'Sugar Cane Yield Prediction', response.data)  # Check for the correct title
 
     def test_prediction(self):
         # Test the prediction route with valid mock data
@@ -36,10 +35,15 @@ class TestApp(unittest.TestCase):
             'population': 1000000,
             'pop_change': 2.1
         }
-        scaler = joblib.load('scaler.pkl')
-        mock_data = scaler.transform(pd.DataFrame([mock_data]))
-        response = self.app.post('/result', data=mock_data)[0]
-        self.assertIn(b'Next Year Crop Yield::', response.data)  # Ensure the result page contains prediction text
+        
+        # Scale the mock data
+        mock_data_scaled = self.scaler.transform(pd.DataFrame([mock_data]))
+
+        # Post the scaled data
+        response = self.app.post('/result', data=dict(zip(mock_data.keys(), mock_data_scaled[0])))
+
+        # Ensure the result page contains prediction text
+        self.assertIn(b'Predicted Sugarcane Yield:', response.data)
 
 if __name__ == '__main__':
     unittest.main()
